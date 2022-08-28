@@ -8,7 +8,6 @@
 
 img {
   max-width: 100%;
-  height: 200px;
 }
 
 button {
@@ -28,6 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Container global */
 .container {
   height: inherit;
 
@@ -36,10 +36,12 @@ body {
   justify-content: center;
 }
 
-.wrapper {
+/* Cards container */
+.cards {
   position: relative;
 }
 
+/* All cards */
 .card {
   max-width: 300px;
   width: max-content;
@@ -47,6 +49,7 @@ body {
   padding: 2rem;
 }
 
+/* First Card */
 .card:first-of-type {
   position: absolute;
   inset: unset;
@@ -56,41 +59,46 @@ body {
   transform-origin: left top;
   transition: 400ms;
 
-  background-color: #293241;
+  background: linear-gradient(to bottom right, #50527c, #404164, #30314b);
   box-shadow: 3px 3px 29px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* Hover first card */
 .card:first-of-type:hover {
   transform: translate(-20%, -17%) skew(23deg, -10deg);
 }
 
+/* Second Card */
 .card:last-of-type {
-  background-color: #fd5d5d;
-  box-shadow: 0 3px 9px -1px rgba(0, 0, 0, 0.5);
   transform: translate(-20%, 20%) skew(23deg, -10deg);
+  background: linear-gradient(to top left, #4d77ff, #5ee6eb);
+  box-shadow: 0 3px 9px -1px rgba(0, 0, 0, 0.5);
 }
 
-figure {
+/* Image */
+.card__hero figure {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-h2 {
+/* Descriptions */
+.card__details h2 {
   font-family: caveat;
   font-size: 2.5rem;
 }
 
-p {
+.card__details p {
   margin: 1rem 0 3rem;
 }
 
-.btns {
+/* Buttons */
+.card__actions {
   display: flex;
   margin-top: 1rem;
 }
 
-.btns button {
+.card__actions button {
   flex: 1;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -102,11 +110,11 @@ p {
   font-weight: 600;
 }
 
-.btns button:not(:first-of-type) {
+.card__actions button:last-of-type {
   background-color: transparent;
   color: #fff;
 }
 
-.btns button:first-of-type:hover {
+.card__actions button:first-of-type:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
